@@ -1,7 +1,8 @@
+import SuspectCard from "./SuspectCard";
 const Associates = () => {
     return ( 
         <div>
-            <h2>Associates</h2>
+            <SuspectCard/>
         </div>
      );
 }

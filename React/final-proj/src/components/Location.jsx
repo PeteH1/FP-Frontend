@@ -1,7 +1,8 @@
+import SuspectCard from "./SuspectCard";
 const Location = () => {
     return ( 
         <div>
-            <h2>Location</h2>
+            <SuspectCard/>
         </div>
      );
 }
