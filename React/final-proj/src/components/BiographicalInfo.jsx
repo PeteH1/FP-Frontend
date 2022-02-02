@@ -1,7 +1,8 @@
+import SuspectCard from "./SuspectCard";
 const BiographicalInfo = () => {
     return ( 
         <div>
-            <h2>Bio</h2>
+            <SuspectCard/>
         </div>
      );
 }
