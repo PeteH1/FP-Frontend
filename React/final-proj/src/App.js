@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route, NavigationType } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './css/App.css';
 import FPNav from './components/FP-Nav';
 import Home from './components/Home';
 import Footer from './components/Footer';
-import Page from './components/Page';
+import Tabs from './components/Tabspace.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <FPNav/>
           <Routes>
                 <Route path="/" exact element={<Home/>} />
-                <Route path="/page" exact element={<Page/>} />
+                <Route path="/tabs" exact element={<Tabs/>} />
           </Routes>
         <Footer/>
       </BrowserRouter>  
