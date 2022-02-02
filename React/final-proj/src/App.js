@@ -1,15 +1,16 @@
+import { BrowserRouter, Routes, Route, NavigationType } from 'react-router-dom';
 import './css/App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Nav from './component/Nav';
-import Home from './component/Home';
-import Footer from './component/Footer';
-import Page from './component/Page';
+import FPNav from './components/FP-Nav';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import Page from './components/Page';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav/>
+        <FPNav/>
           <Routes>
                 <Route path="/" exact element={<Home/>} />
                 <Route path="/page" exact element={<Page/>} />
