@@ -1,8 +1,8 @@
-import SuspectCard from "./SuspectCard";
-const BiographicalInfo = () => {
+import SuspectPage from "./SuspectPage";
+const BiographicalInfo = ({data}) => {
     return ( 
         <div>
-            <SuspectCard/>
+            <SuspectPage data = {data}/>
         </div>
      );
 }
