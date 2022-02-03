@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <FPNav/>
+
           <Routes>
                 <Route path="/" exact element={<Home/>} />
                 <Route path="/tabs" exact element={<Tabs/>} />
