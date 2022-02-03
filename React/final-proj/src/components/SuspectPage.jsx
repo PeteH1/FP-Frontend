@@ -1,6 +1,3 @@
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BioData from './dataComponents/BioData';
 import AssociateData from './dataComponents/AssociateData';
 import FinanceData from './dataComponents/FinanceData';
