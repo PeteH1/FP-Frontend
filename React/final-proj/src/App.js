@@ -5,19 +5,13 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Tabs from './components/Tabspace.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Manager from './components/management/Manager';
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <FPNav/>
-          <Routes>
-                <Route path="/" exact element={<Home/>} />
-                <Route path="/tabs" exact element={<Tabs/>} />
-          </Routes>
-        <Footer/>
-      </BrowserRouter>  
+        <Manager/>
     </div>
   );
 }
