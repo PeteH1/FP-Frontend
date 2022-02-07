@@ -22,7 +22,7 @@ const Tabspace = ({ searchQuery }) => {
   useEffect(() => {
 
     if (searchQuery) {
-      axios.get("http://localhost:5015/test/suspect/PeteHutchison")
+      axios.get("http://localhost:5015/suspect/PeteHutchison")
         .then((res) => {
           console.log(res.data);
           setData(res.data);
