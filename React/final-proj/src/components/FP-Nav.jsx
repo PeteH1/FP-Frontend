@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import SearchResults from './SearchResults'
 
 
 const NavigationBar = ({setSearch}) => {
@@ -75,7 +76,7 @@ const NavigationBar = ({setSearch}) => {
 
                             }}
                         />
-                        <Link to="/"> {/*This will need to link to the search results page*/}
+                        <Link to="/SearchResults"> {/*This will need to link to the search results page*/}
                         <Button variant="secondary" onClick={() => {
                             setSearch(tempSearch);
                             
