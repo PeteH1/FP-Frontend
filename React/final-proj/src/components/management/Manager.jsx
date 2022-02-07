@@ -4,6 +4,7 @@ import Home from '../Home';
 import React, { useState } from 'react';
 import Footer from '../Footer';
 import Tabs from '../Tabspace.jsx';
+import SearchResults from '../SearchResults.jsx';
 
 const Manager = () => {
     const [search, setSearch] = useState([]);
@@ -15,6 +16,7 @@ const Manager = () => {
                 <Routes>
                     <Route path="/" exact element={<Home searchQuery={search} />} />
                     <Route path="/tabs" exact element={<Tabs searchQuery={search}/>} />
+                    <Route path="/searchresults" exact element={<SearchResults searchQuery={search}/>} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
