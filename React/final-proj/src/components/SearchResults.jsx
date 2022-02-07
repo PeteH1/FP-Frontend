@@ -58,7 +58,7 @@ const SearchResults = ({searchQuery}) => {
 
             {data.map((bioInfo) => {
                 return (
-                <h2>Forename: {bioInfo.forenames}</h2>
+                <h2>Accordian Forename: {bioInfo.forenames}</h2>
             )})}
 
 

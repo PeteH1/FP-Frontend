@@ -2,17 +2,45 @@ import Tab from 'react-bootstrap/Tab';
 import React, { useState } from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Associates from './Associates';
-import BioInfo from './BiographicalInfo';
+import BiographicalInfo from './BiographicalInfo';
 import Finance from './FinancialTransactions';
 import Location from './Location';
+import axios from 'axios';
+import { useEffect } from 'react';
+import BioData from './dataComponents/BioData';
 
 // import { render } from 'react-dom';
 
-const Tabspace = () => {
+const Tabspace = ({ searchQuery }) => {
+
+  const [error, setError] = useState(null);
+  const [loaded, setLoaded] = useState(false);
+
+  const [data, setData] = useState([]);
+
+
+  useEffect(() => {
+
+    if (searchQuery) {
+      axios.get("http://localhost:5015/test/suspect/PeteHutchison")
+        .then((res) => {
+          console.log(res.data);
+          setData(res.data);
+          setLoaded(true);
+        })
+        .catch((err) => {
+          setError(error);
+          console.error(err);
+        })
+    }
+  }, [searchQuery]
+  );
+
   const [key, setKey] = useState("bio-info");
+
   return (
     <div>
-      <h1>$Name of Suspect</h1>
+      <h1>{data.bioinfo[0].forenames} {data.bioinfo[0].surname}</h1>
       <Tabs
         id="controlled-tab-example"
         activeKey={key}
@@ -23,16 +51,16 @@ const Tabspace = () => {
         className="mb-3"
       >
         <Tab eventKey="bio-info" title="Biographical Information">
-          <BioInfo data={key} />
+          <BiographicalInfo tab={key} data={data}/>
         </Tab>
         <Tab eventKey="associates" title="Associates">
-          <Associates data={key}/>
+          <Associates data={key} />
         </Tab>
         <Tab eventKey="finance" title="Financial Transactions">
-          <Finance data={key}/>
+          <Finance data={key} />
         </Tab>
         <Tab eventKey="location" title="Location">
-          <Location data={key}/>
+          <Location data={key} />
         </Tab>
       </Tabs>
     </div>

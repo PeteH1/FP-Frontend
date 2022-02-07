@@ -2,24 +2,28 @@ import BioData from './dataComponents/BioData';
 import AssociateData from './dataComponents/AssociateData';
 import FinanceData from './dataComponents/FinanceData';
 import LocationData from './dataComponents/LocationData';
-const SuspectCard = ({data}) => {
+const SuspectPage = ({tab, data}) => {
 
-if (data == "bio-info") {
+if (tab == "bio-info") {
     return(
-        <BioData data = {data}/>
+        <BioData data={data} />
     );
-} else if (data == "associates") {
+} else if (tab == "associates") {
     return(
         <AssociateData data = {data}/>
     );
-}else if (data == "finance") {
+}else if (tab == "finance") {
     return(
         <FinanceData data = {data}/>
     );
-} else if (data == "location") {
+} else if (tab == "location") {
     return(
         <LocationData data = {data}/>
     );
+} else {
+    return(
+        <h2>Data Loading</h2>
+    )
 }};
 
-export default SuspectCard;
+export default SuspectPage;

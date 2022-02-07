@@ -1,8 +1,13 @@
+
+import React, { useState } from 'react';
+
 const BioData = ({data}) => {
+console.log(data);
+
     return (
         <div>
-            <h2>Bio Data</h2>
-            {/* <h2>name:{name}</h2>*/}
+            <p>Forename: {data.bioinfo[0].forenames}</p>
+            <p>Surname: {data.bioinfo[0].surname}</p>
         </div>
       );
 }
