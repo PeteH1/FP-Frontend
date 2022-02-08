@@ -68,7 +68,7 @@ const NavigationBar = ({ setSearch }) => {
                     <Form className="d-flex">
                         <FormControl
                             type="search"
-                            placeholder="Search"
+                            placeholder="Full Name"
                             className="me-2"
                             aria-label="Search"
                             onChange={(e) => {

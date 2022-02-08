@@ -22,7 +22,7 @@ if (tab == "bio-info") {
     );
 } else {
     return(
-        <h2>Data Loading??</h2>
+        <h2>Data Loading</h2>
     )
 }};
 

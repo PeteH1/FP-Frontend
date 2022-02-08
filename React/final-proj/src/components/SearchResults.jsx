@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import BiographicalInfo from './BiographicalInfo';
+import SearchResultsCards from './SearchResultsCards';
 // import Manager from './Manager.jsx';
 
 const SearchResults = ({ searchQuery }) => {
@@ -23,7 +23,7 @@ const SearchResults = ({ searchQuery }) => {
 
         if (searchQuery) {
             
-            axios.get(`http://localhost:5015/test/${searchQuery}`)
+            axios.get(`http://localhost:5015/suspect/${searchQuery}`)
                 .then((res) => {
                     // const bioInfo = res.data.bioinfo;
                     console.log(res);
@@ -65,11 +65,11 @@ const SearchResults = ({ searchQuery }) => {
             {data.map((data) => {
                 return (
                     <Card style={{ width: '45rem' }} className="text-center" class="shadow border" id="selectCard">
-                        <Card.Header as="h1">Suspect biographical info</Card.Header>
+                        <Card.Header as="h1">{data.forenames} {data.surname}</Card.Header>
                         <Card.Body>
                             {/* <Card.Title>Special title treatment</Card.Title> */}
                             <Card.Text>
-                                <BiographicalInfo
+                                <SearchResultsCards
 
                                     forenames={data.forenames}
                                     surname={data.surname}
@@ -79,27 +79,14 @@ const SearchResults = ({ searchQuery }) => {
 
                                 />
                             </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
+                            <Link to="/tabs/:id">
+                            <Button variant="primary">More Info</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                 )
             })}
 
-            <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Accordion defaultActiveKey={['0']} alwaysOpen>
-                        <Accordion.Item eventKey="1">
-                            <Accordion.Header>title</Accordion.Header>
-                            <Accordion.Body>
-                                body
-                                <Link to="/tabs/9676428412">
-                                    <Button variant="secondary">More Info</Button>
-                                </Link>
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
-                </Card.Body>
-            </Card>
         </div>
 
 
