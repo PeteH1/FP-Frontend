@@ -1,9 +1,9 @@
 const AssociateData = ({data}) => {
     return (
         <div>
-            {/* <h4>Calls Made</h4>
-            <p>ID: {data.citizenPassport[0].citizen_id}</p>
-            <p>Date of Birth: {data.citizenPassport[0].date_of_birth}</p>
+            <h4>Calls Made</h4>
+            {/* <p>calls made: {data.callsMade}</p> */}
+            {/* <p>Date of Birth: {data.citizenPassport[0].date_of_birth}</p>
             <p>Home Address: {data.citizenPassport[0].home_address}</p>
             <p>Place of Birth: {data.citizenPassport[0].place_of_birth}</p>
             <p>Sex: {data.citizenPassport[0].date_of_birth}</p>

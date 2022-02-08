@@ -27,7 +27,7 @@ const Tabspace = ({ searchQuery }) => {
     if (searchQuery) {
       axios.get(`http://localhost:5015/suspect/readById/${id}`)
         .then((res) => {
-          console.log(res.data);
+          console.log(res.data.callsMade);
           setData(res.data);
           setLoaded(true);
         })
@@ -56,7 +56,7 @@ const Tabspace = ({ searchQuery }) => {
         <Tab eventKey="bio-info" title="Biographical Information">
           <BiographicalInfo tab={key} data={data}/>
         </Tab>
-        <Tab eventKey="associates" title="Associates">
+        <Tab eventKey="associates" title="Phone Calls">
           <Associates data={key} />
         </Tab>
         <Tab eventKey="finance" title="Financial Transactions">
