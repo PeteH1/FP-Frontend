@@ -7,6 +7,7 @@ import Finance from './FinancialTransactions';
 import Location from './Location';
 import axios from 'axios';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import BioData from './dataComponents/BioData';
 
 // import { render } from 'react-dom';
@@ -17,12 +18,14 @@ const Tabspace = ({ searchQuery }) => {
   const [loaded, setLoaded] = useState(false);
 
   const [data, setData] = useState([]);
-
+  let{id} = useParams();
 
   useEffect(() => {
 
+    console.log(id);
+
     if (searchQuery) {
-      axios.get("http://localhost:5015/suspect/readAll")
+      axios.get(`http://localhost:5015/suspect/readById/${id}`)
         .then((res) => {
           console.log(res.data);
           setData(res.data);
@@ -40,7 +43,7 @@ const Tabspace = ({ searchQuery }) => {
 
   return (
     <div>
-      <h1>{data.bioinfo[0].forenames} {data.bioinfo[0].surname}</h1>
+      {/* <h1>{data.citizenPassport[0].forenames} {data.citizenPassport[0].surname}</h1> */}
       <Tabs
         id="controlled-tab-example"
         activeKey={key}
