@@ -29,7 +29,16 @@
 }
 
 h2 {
-  color: red;
+  color: black
+}
+
+#parentCard{ 
+  color: black
+}
+
+#selectCard{
+  background-color: dodgerblue;
+  display: inline-block;
 }
 
 @keyframes App-logo-spin {
