@@ -3,89 +3,94 @@ import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+import SearchResultsCards from './SearchResultsCards';
+// import Manager from './Manager.jsx';
 
-const SearchResults = ({searchQuery}) => {
+const SearchResults = ({ searchQuery }) => {
     const [error, setError] = useState(null);
     const [loaded, setLoaded] = useState(false);
 
-    const [data, setData]=useState([]); // Filled with data from the database.
+    const [data, setData] = useState([]); // Filled with data from the database.
 
     // useEffect triggers again when
 
-    useEffect(()=> {  
-        if(searchQuery) {
-            axios.get("https://jsonplaceholder.typicode.com/todos/1")
-        .then((res) => {
-            console.log(res);
-            setData(res.data);
-            
-            setLoaded(true);
-        })
-        .catch((err) => {
-            setError(error);
-            console.error(err);
-        });
-        }
-    },[]);
+    //   const getData = () => {   
 
-    const getByAddress =() => {
+
+    useEffect(() => {
+
+        if (searchQuery) {
+            
+            axios.get(`http://localhost:5015/suspect/${searchQuery}`)
+                .then((res) => {
+                    // const bioInfo = res.data.bioinfo;
+                    console.log(res);
+
+                    setData(res.data);
+                    console.log("my data", data);
+                    setLoaded(true);
+
+
+                })
+                .catch((err) => {
+                    setError(error);
+                    console.error(err);
+                })
+                .then(() => {
+                    setTimeout(() => {
+                        console.log(data)
+                    }, 2000)
+                });
+        }
+    }, [searchQuery]
+    );
+
+
+
+    const getByAddress = () => {
         //Axios
         // Renders collapsed cards of suspects with associated address.
     };
 
-    const getByCitizenID =() => {
+    const getByCitizenID = () => {
         //Axios
         // Renders collapsed cards of suspects with associated citizen Id.
     };
 
-    return ( 
+    return (
         <div>
-            <h2>{data.title}</h2>
-            <Card style={{ width: '18rem' }}>
-            {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-            <Card.Body>
-                <Accordion defaultActiveKey={['0']} alwaysOpen>
-                    <Accordion.Item eventKey="1">
-                        <Accordion.Header>$Full name Variable</Accordion.Header>
-                        <Accordion.Body>
-                            
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-            </Card.Body>
-        </Card>
+            {/* <button type="button" onClick = {getData}> Get Data </button> */}
+            {data.map((data) => {
+                return (
+                    <Card style={{ width: '45rem' }} className="text-center" class="shadow border" id="selectCard">
+                        <Card.Header as="h1">{data.forenames} {data.surname}</Card.Header>
+                        <Card.Body>
+                            {/* <Card.Title>Special title treatment</Card.Title> */}
+                            <Card.Text>
+                                <SearchResultsCards
 
-        <Card style={{ width: '18rem' }}>
-            {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-            <Card.Body>
-                <Accordion defaultActiveKey={['0']} alwaysOpen>
-                    <Accordion.Item eventKey="1">
-                        <Accordion.Header>$Full name Variable</Accordion.Header>
-                        <Accordion.Body>
-                            
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-            </Card.Body>
-        </Card>
+                                    forenames={data.forenames}
+                                    surname={data.surname}
+                                    home_address={data.home_address}
+                                    place_of_birth={data.place_of_birth}
+                                    sex={data.sex}
 
-        <Card style={{ width: '18rem' }}>
-            {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-            <Card.Body>
-                <Accordion defaultActiveKey={['0']} alwaysOpen>
-                    <Accordion.Item eventKey="1">
-                        <Accordion.Header>$Full name Variable</Accordion.Header>
-                        <Accordion.Body>
-                            
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-            </Card.Body>
-        </Card>
+                                />
+                            </Card.Text>
+                            <Link to="/tabs/:id">
+                            <Button variant="primary">More Info</Button>
+                            </Link>
+                        </Card.Body>
+                    </Card>
+                )
+            })}
+
         </div>
-        
-        
-     );
+
+
+    );
 }
- 
+
 export default SearchResults;

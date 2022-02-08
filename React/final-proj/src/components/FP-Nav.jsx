@@ -8,9 +8,10 @@ import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import SearchResults from './SearchResults'
 
 
-const NavigationBar = ({setSearch}) => {
+const NavigationBar = ({ setSearch }) => {
     const [error, setError] = useState(null);
     const [loaded, setLoaded] = useState(false);
 
@@ -21,7 +22,7 @@ const NavigationBar = ({setSearch}) => {
     //     .then((res) => {
     //         console.log(res);
     //         searchData(res.data);
-            
+
     //         setLoaded(true);
     //     })
     //     .catch((err) => {
@@ -32,7 +33,7 @@ const NavigationBar = ({setSearch}) => {
     // };
 
     // const getById = (id) => {
- 
+
     //     axios.get(`http://localhost:5015/beer/get/${id}`)
     //     .then((response) => {
     //         setBeerData([response.data]);
@@ -42,7 +43,7 @@ const NavigationBar = ({setSearch}) => {
     //         setError(error);
     //     });
     // };
-    
+
     let tempSearch;
 
     return (
@@ -51,7 +52,7 @@ const NavigationBar = ({setSearch}) => {
                 <Container>
 
                     <Navbar.Brand href="/">
-                    
+
                         <img
                             src={Catlogo}
                             alt="Logo"
@@ -67,7 +68,7 @@ const NavigationBar = ({setSearch}) => {
                     <Form className="d-flex">
                         <FormControl
                             type="search"
-                            placeholder="Search"
+                            placeholder="Full Name"
                             className="me-2"
                             aria-label="Search"
                             onChange={(e) => {
@@ -75,20 +76,23 @@ const NavigationBar = ({setSearch}) => {
 
                             }}
                         />
-                        <Link to="/"> {/*This will need to link to the search results page*/}
-                        <Button variant="secondary" onClick={() => {
-                            setSearch(tempSearch);
-                            
-                            // getByFullName(fullName);
-                            
-                        }}>Search</Button>
+                        <Link to="/SearchResults"> {/*This will need to link to the search results page*/}
+                            <Button variant="secondary" onClick={() => {
+                                if (tempSearch == "" || tempSearch.length <= 10 || !tempSearch.includes(" ")) {
+                                    alert("enter a first name and last name")
+                                } else {
+                                    setSearch(tempSearch);
+                                    console.log("temp", tempSearch);
+                                }
+
+                            }}>Search</Button>
                         </Link>
                     </Form>
                 </Container>
             </Navbar>
             {/* <Home searchData = {searchResult}/> */}
-             {/* We need to move state from Navbar to Home, then Home to Tabspace */}
-            
+            {/* We need to move state from Navbar to Home, then Home to Tabspace */}
+
         </div>
     );
 }
