@@ -1,4 +1,3 @@
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Catlogo from '../img/sqcropLogo.jpg';
@@ -6,9 +5,7 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
-import SearchResults from './SearchResults'
 
 
 const NavigationBar = ({ setSearch }) => {
@@ -65,7 +62,7 @@ const NavigationBar = ({ setSearch }) => {
                     {/* <Nav className="me-auto">
                         <Nav.Link href="/tabs">Temp Tabs</Nav.Link>
                     </Nav> */}
-                    <Form className="d-flex">
+                    <Form variant="dark" className="d-flex">
                         <FormControl
                             type="search"
                             placeholder="Full Name"
@@ -77,7 +74,7 @@ const NavigationBar = ({ setSearch }) => {
                             }}
                         />
                         <Link to="/SearchResults"> {/*This will need to link to the search results page*/}
-                            <Button variant="secondary" onClick={() => {
+                            <Button variant="dark" onClick={() => {
                                 if (tempSearch == "" || tempSearch.length <= 8 || !tempSearch.includes(" ")) {
                                     alert("enter a first name and last name")
                                 } else {
