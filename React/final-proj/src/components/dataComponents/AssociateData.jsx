@@ -10,7 +10,7 @@ const AssociateData = ({ data }) => {
                 {data.callsMade.map((call) => {
                     return (
                         <div>
-                        <p>Associate Name: {call.forenames}{call.surnames}</p>
+                        <p>Associate Name: {call.forenames} {call.surname}</p>
                         <p>Associate Number: {call.receiver_msisdn}</p>
                         <p>Timestamp: {call.timestamp}</p>
                         <p>-----------------------------------</p>
@@ -22,7 +22,7 @@ const AssociateData = ({ data }) => {
                 {data.callsReceived.map((call) => {
                     return (
                         <div>
-                        <p>Associate Name: {call.forenames}{call.surnames}</p>
+                        <p>Associate Name: {call.forenames} {call.surname}</p>
                         <p>Associate Number: {call.receiver_msisdn}</p>
                         <p>Timestamp: {call.timestamp}</p>
                         <p>-----------------------------------</p>
