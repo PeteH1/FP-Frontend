@@ -60,7 +60,7 @@ const NavigationBar = ({ setSearch }) => {
                             height="30"
                             className="d-inline-block align-top"
                         />{' '}
-                        Suspect search
+                        Suspect Search
                     </Navbar.Brand>
                     {/* <Nav className="me-auto">
                         <Nav.Link href="/tabs">Temp Tabs</Nav.Link>

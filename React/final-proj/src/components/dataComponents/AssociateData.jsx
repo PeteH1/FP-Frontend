@@ -6,20 +6,14 @@ const AssociateData = ({ data }) => {
     } else {
         return (
             <div>
-                <h4>Calls Made</h4>
-                <p>First call timestamp: {data.callsReceived[0].timestamp}</p>
-                {/* <p>name: {data.callsRevieved[0].timestamp} </p> */}
-                {/* <p>ID: {data.citizenPassport[0].citizen_id}</p>
-            <p>Date of Birth: {data.citizenPassport[0].date_of_birth}</p>
-            <p>Home Address: {data.citizenPassport[0].home_address}</p>
-            <p>Place of Birth: {data.citizenPassport[0].place_of_birth}</p>
-            <p>Sex: {data.citizenPassport[0].date_of_birth}</p>
-            <h3>Calls Received</h3>
-            <p>Passport Number: {data.citizenPassport[0].passport_number}</p>
-            <p>Date of Expiry: {data.citizenPassport[0].date_of_expiry}</p>
-            <p>Date of Issue: {data.citizenPassport[0].date_of_issue}</p>
-            <p>Issuing Country: {data.citizenPassport[0].issuing_country}</p>
-            <p>Nationality: {data.citizenPassport[0].nationality}</p> */}
+                <h4>Calls Made to Associates</h4>
+                <p>Timestamp: {data.callsMade[0].timestamp}</p>
+                <p>Associate Name: {data.callsMade[0].forenames} {data.callsReceived[0].surnames}</p>
+                <p>Associate Number: {data.callsMade[0].receiver_msisdn}</p>
+                <h4>Calls Received from Associates</h4>
+                <p>Timestamp: {data.callsReceived[0].timestamp}</p>
+                <p>Associate Name: {data.callsReceived[0].forenames} {data.callsReceived[0].surnames}</p>
+                <p>Associate Number: {data.callsReceived[0].receiver_msisdn}</p>
             </div>
         );
     }

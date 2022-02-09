@@ -3,18 +3,19 @@ import React, { useState } from 'react';
 
 const BioData = ({ data }) => {
     // console.log(data);
-    if (data.eposTransactions.length === 0 || data.anprSightings.length === 0 || data.atmTransactions.length === 0) {
-        return <h2> NOOOOOO DATA FOR ONE ARRAY </h2>
-    } else {
+    // if (data.eposTransactions.length === 0 || data.anprSightings.length === 0 || data.atmTransactions.length === 0) {
+    //     return <h2> NOOOOOO DATA FOR ONE ARRAY </h2>
+    // } else {
         return (
             <div>
-                <h4>Basic Infoz</h4>
+                <h4>Basic Information</h4>
                 <p>ID: {data.citizenPassport[0].citizen_id}</p>
                 <p>Date of Birth: {data.citizenPassport[0].date_of_birth}</p>
                 <p>Home Address: {data.citizenPassport[0].home_address}</p>
                 <p>Place of Birth: {data.citizenPassport[0].place_of_birth}</p>
                 <p>Sex: {data.citizenPassport[0].date_of_birth}</p>
-                <h3>Passport Info</h3>
+                <p>Phone Number: {data.callsMade[0].caller_msisdn}</p>
+                <h4>Passport Information</h4>
                 <p>Passport Number: {data.citizenPassport[0].passport_number}</p>
                 <p>Date of Expiry: {data.citizenPassport[0].date_of_expiry}</p>
                 <p>Date of Issue: {data.citizenPassport[0].date_of_issue}</p>
@@ -23,6 +24,6 @@ const BioData = ({ data }) => {
             </div>
         );
     }
-}
+// }
 
 export default BioData;
