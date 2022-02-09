@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import './css/App.css';
+import './styling/App.css';
 import FPNav from './components/FP-Nav';
 import Home from './components/Home';
 import Footer from './components/Footer';
