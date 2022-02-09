@@ -1,8 +1,8 @@
 import SuspectPage from "./SuspectPage";
-const Associates = ({data}) => {
+const Associates = ({tab, data}) => {
     return ( 
         <div>
-            <SuspectPage data={data}/>
+            <SuspectPage tab={tab} data={data}/>
         </div>
      );
 }
