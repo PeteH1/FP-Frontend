@@ -4,7 +4,7 @@ const LocationData = ({ data }) => {
     } else {
         return (
             <div>
-                <h2>Location Data</h2>
+                <h4>Location Data</h4>
                 <p>atm latitude: {data.atmTransactions[0].latitude}</p>
                 <p>atm longitude: {data.atmTransactions[0].longitude}</p>
                 <p>atm street name: {data.atmTransactions[0].street_name}</p>

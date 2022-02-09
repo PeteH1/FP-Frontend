@@ -1,21 +1,51 @@
-const FinanceData = ({data}) => {
-    if (data.eposTransactions.length === 0 || data.anprSightings.length === 0 || data.atmTransactions.length === 0) {
-        return <h2> NOOOOOO DATA FOR ONE ARRAY </h2>
-    } else {
-    return ( 
-        <div>
-            <h2>Finance Data</h2>
-            <p>Bank: {data.atmTransactions[0].bank}</p>
-            <p>Account number: {data.atmTransactions[0].account_number}</p>
-            <p>Card number: {data.atmTransactions[0].bank_card_number}</p>
-            <p>cash withdrawal</p>
-            <p>Amount: {data.atmTransactions[0].amount}</p>
-            <p>Street_name: {data.atmTransactions[0].street_name}</p>
-            <p>type: {data.atmTransactions[0].type}</p>
-            <p>timestamp: {data.atmTransactions[0].timestamp}</p>
-        </div>
-     );
+const FinanceData = ({ data }) => {
+    // if (data.eposTransactions.length === 0 || data.anprSightings.length === 0 || data.atmTransactions.length === 0) {
+    //     return <h2> NOOOOOO DATA FOR ONE ARRAY </h2>
+    // } else {
+        return (
+            <div>
+                <h4>Bank Card Details</h4>
+                {data.atmTransactions.map((details) => {
+                    return (
+                        <div>
+                            <p>Account number: {details.account_number}</p>
+                            <p>Card number: {details.bank_card_number}</p>
+                            <p>Sort Code: {details.sort_code}</p>
+                            <p>Bank: {details.bank}</p>
+                        </div>
+                    )
+                }
+                )}
+
+                <h4>ATM Transactions</h4>
+                {data.atmTransactions.map((details) => {
+                    return (
+                        <div>
+                            <p>Timestamp: {details.timestamp}</p>
+                            <p>Type: {details.type}</p>
+                            <p>Amount: {details.amount}</p>
+                            <p>Operator: {details.operator}</p>
+                        </div>
+                    )
+                }
+                )}
+
+                <h4>EPOS Transactions</h4>
+                {data.eposTransactions.map((details) => {
+                    return (
+                        <div>
+                            <p>Timestamp: {details.timestamp}</p>
+                            <p>Amount: {details.amount}</p>
+                            <p>Payee Account: {details.payee_account}</p>
+                            <p>Vendor: {details.vendor}</p>
+                            <p>Vendor Address: {details.street_name}</p>
+                        </div>
+                    )
+                }
+                )}
+            </div>
+        );
     }
-}
- 
+// }
+
 export default FinanceData;
