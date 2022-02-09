@@ -60,11 +60,11 @@ const NavigationBar = ({ setSearch }) => {
                             height="30"
                             className="d-inline-block align-top"
                         />{' '}
-                        Final Project
+                        Suspect search
                     </Navbar.Brand>
-                    <Nav className="me-auto">
+                    {/* <Nav className="me-auto">
                         <Nav.Link href="/tabs">Temp Tabs</Nav.Link>
-                    </Nav>
+                    </Nav> */}
                     <Form className="d-flex">
                         <FormControl
                             type="search"
@@ -78,13 +78,12 @@ const NavigationBar = ({ setSearch }) => {
                         />
                         <Link to="/SearchResults"> {/*This will need to link to the search results page*/}
                             <Button variant="secondary" onClick={() => {
-                                if (tempSearch == "" || tempSearch.length <= 10 || !tempSearch.includes(" ")) {
+                                if (tempSearch == "" || tempSearch.length <= 8 || !tempSearch.includes(" ")) {
                                     alert("enter a first name and last name")
                                 } else {
                                     setSearch(tempSearch);
                                     console.log("temp", tempSearch);
                                 }
-
                             }}>Search</Button>
                         </Link>
                     </Form>

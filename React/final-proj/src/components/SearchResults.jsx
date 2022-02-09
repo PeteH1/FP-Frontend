@@ -11,22 +11,18 @@ import SearchResultsCards from './SearchResultsCards';
 const SearchResults = ({ searchQuery }) => {
     const [error, setError] = useState(null);
     const [loaded, setLoaded] = useState(false);
+    const [citizenId, setCitizenId] = useState("");
 
     const [data, setData] = useState([]); // Filled with data from the database.
-
-    // useEffect triggers again when
-
-    //   const getData = () => {   
-
 
     useEffect(() => {
 
         if (searchQuery) {
             
-            axios.get(`http://localhost:5015/suspect/${searchQuery}`)
+            axios.get(`http://localhost:5015/suspect/search/${searchQuery}`)
                 .then((res) => {
                     // const bioInfo = res.data.bioinfo;
-                    console.log(res);
+                    console.log(res.data[0].citizen_id);
 
                     setData(res.data);
                     console.log("my data", data);
@@ -70,16 +66,12 @@ const SearchResults = ({ searchQuery }) => {
                             {/* <Card.Title>Special title treatment</Card.Title> */}
                             <Card.Text>
                                 <SearchResultsCards
-
-                                    forenames={data.forenames}
-                                    surname={data.surname}
                                     home_address={data.home_address}
                                     place_of_birth={data.place_of_birth}
-                                    sex={data.sex}
-
-                                />
+                                    sex={data.sex}>
+                                </SearchResultsCards>
                             </Card.Text>
-                            <Link to="/tabs/:id">
+                            <Link to={`/tabs/${data.citizen_id}`}>
                             <Button variant="primary">More Info</Button>
                             </Link>
                         </Card.Body>

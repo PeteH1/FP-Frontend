@@ -41,6 +41,23 @@ h2 {
   display: inline-block;
 }
 
+ul.nav.nav-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footerbar {
+  height: 75px;
+  background-color: gray;
+  position:absolute;
+  position: fixed;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
