@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Table from 'react-bootstrap/Table';
 
 const AssociateData = ({ data }) => {
     if (data.eposTransactions.length === 0 || data.anprSightings.length === 0 || data.atmTransactions.length === 0) {
@@ -6,8 +7,30 @@ const AssociateData = ({ data }) => {
     } else {
         return (
             <div>
-                <h4>Calls Made</h4>
-                <p>First call timestamp: {data.callsReceived[0].timestamp}</p>
+                {/* <h4>Calls Made</h4>
+                <p>First call timestamp: {data.callsReceived[0].timestamp}</p> */}
+
+                <div>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th colSpan={2}>Calls Made</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>First call timestamp</td>
+                                <td>{data.citizenPassport[0].citizen_id}</td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </div>
+
+
+
+
+
                 {/* <p>name: {data.callsRevieved[0].timestamp} </p> */}
                 {/* <p>ID: {data.citizenPassport[0].citizen_id}</p>
             <p>Date of Birth: {data.citizenPassport[0].date_of_birth}</p>

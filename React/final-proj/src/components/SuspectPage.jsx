@@ -2,6 +2,7 @@ import BioData from './dataComponents/BioData';
 import AssociateData from './dataComponents/AssociateData';
 import FinanceData from './dataComponents/FinanceData';
 import LocationData from './dataComponents/LocationData';
+import styles from '../styling/custom.scss';
 const SuspectPage = ({tab, data}) => {
 
 if (tab == "bio-info") {

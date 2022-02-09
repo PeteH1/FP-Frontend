@@ -11,7 +11,6 @@ import SearchResultsCards from './SearchResultsCards';
 const SearchResults = ({ searchQuery }) => {
     const [error, setError] = useState(null);
     const [loaded, setLoaded] = useState(false);
-    const [citizenId, setCitizenId] = useState("");
 
     const [data, setData] = useState([]); // Filled with data from the database.
 
@@ -42,18 +41,6 @@ const SearchResults = ({ searchQuery }) => {
         }
     }, [searchQuery]
     );
-
-
-
-    const getByAddress = () => {
-        //Axios
-        // Renders collapsed cards of suspects with associated address.
-    };
-
-    const getByCitizenID = () => {
-        //Axios
-        // Renders collapsed cards of suspects with associated citizen Id.
-    };
 
     return (
         <div>

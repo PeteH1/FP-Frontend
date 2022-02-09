@@ -1,4 +1,3 @@
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Catlogo from '../img/sqcropLogo.jpg';
@@ -6,49 +5,17 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
-import SearchResults from './SearchResults'
+
 
 
 const NavigationBar = ({ setSearch }) => {
-    const [error, setError] = useState(null);
-    const [loaded, setLoaded] = useState(false);
-
-    // const getByFullName = (fullName) => {
-    //     //Axios
-    //     //Renders collapsed cards of suspects with associated name.
-    //     axios.get(`/get/${fullName}`)
-    //     .then((res) => {
-    //         console.log(res);
-    //         searchData(res.data);
-
-    //         setLoaded(true);
-    //     })
-    //     .catch((err) => {
-    //         setError(error);
-    //         console.error(err);
-    //     });
-
-    // };
-
-    // const getById = (id) => {
-
-    //     axios.get(`http://localhost:5015/beer/get/${id}`)
-    //     .then((response) => {
-    //         setBeerData([response.data]);
-    //         setLoaded(true);
-    //     }).catch((error) => {
-    //         setLoaded(true);
-    //         setError(error);
-    //     });
-    // };
 
     let tempSearch;
 
     return (
         <div>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="darkNav" variant="dark">
                 <Container>
 
                     <Navbar.Brand href="/">

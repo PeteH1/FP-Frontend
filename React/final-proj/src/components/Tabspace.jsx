@@ -8,8 +8,6 @@ import Location from './Location';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import BioData from './dataComponents/BioData';
-import TabContainer from 'react-bootstrap/esm/TabContainer';
 
 // import { render } from 'react-dom';
 
