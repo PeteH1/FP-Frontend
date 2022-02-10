@@ -15,28 +15,13 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const position = [51.505, -0.09];
-
-// let atmLocation = ;
-
 const LocationData = ({ data }) => {
     if (data.eposTransactions.length === 0 || data.anprSightings.length === 0 || data.atmTransactions.length === 0) {
         return <h2> NOOOOOO DATA FOR ONE ARRAY </h2>
     } else {
-
-
-
         return (
             <div>
                 <h2>Location Data</h2>
-                <p>atm latitude: {data.atmTransactions[0].latitude}</p>
-                <p>atm longitude: {data.atmTransactions[0].longitude}</p>
-                <p>atm street name: {data.atmTransactions[0].street_name}</p>
-
-                <p>epos latitude: {data.eposTransactions[0].latitude}</p>
-                <p>epos longitude: {data.eposTransactions[0].longitude}</p>
-                <p>epos vendor: {data.eposTransactions[0].vendor}</p>
-                <p>epos timestamp: {data.eposTransactions[0].timestamp}</p>
                 <div id="map">
                     <MapContainer center={[data.atmTransactions[0].latitude, data.atmTransactions[0].longitude]} zoom={13}>
                         <TileLayer
@@ -45,32 +30,54 @@ const LocationData = ({ data }) => {
                         />
                         {data.atmTransactions.map((atm) => {
                             const atmLocation = [atm.latitude, atm.longitude];
-                            const text = atm.timestamp;
+                            const popupTimestamp = atm.timestamp;
+                            const popupAmount = atm.amount;
+                            const popupAddress = `${atm.street_name}, ${atm.postcode}`;
                             return (
                                 <Marker position={atmLocation}>
                                     <Popup>
-                                        {text}
+                                        ATM transaction<br></br>
+                                        Amount: £{popupAmount}<br></br>
+                                        Address: {popupAddress}<br></br>
+                                        {popupTimestamp}
                                     </Popup>
                                 </Marker>
                             )
                         })}
                         {data.anprSightings.map((anpr) => {
                             const anprLocation = [anpr.latitude, anpr.longitude];
-                            const text = anpr.timestamp;
+                            const popupTimestamp = anpr.timestamp;
+                            const popupCar = `${anpr.colour.replace(/^\w/, (c) => c.toUpperCase())} ${anpr.make} ${anpr.model}`;
+                            const popupReg = anpr.vehicle_registration_no;
                             return (
                                 <Marker position={anprLocation}>
                                     <Popup>
-                                        {text}
+                                        ANPR sighting<br></br>
+                                        Car: {popupCar}<br></br>
+                                        Registration: {popupReg}<br></br>
+                                        {popupTimestamp}
                                     </Popup>
                                 </Marker>
                             )
                         })}
-
-                        {/* <Marker position={position}>
-                            <Popup>
-                                A pretty CSS3 popup. <br /> Easily customizable.
-                            </Popup>
-                        </Marker> */}
+                        {data.eposTransactions.map((epos) => {
+                            const eposLocation = [epos.latitude, epos.longitude];
+                            const popupTimestamp = epos.timestamp;
+                            const popupVendor = epos.vendor;
+                            const popupAmount = epos.amount;
+                            const popupAddress = `${epos.street_name}, ${epos.postcode}`;
+                            return (
+                                <Marker position={eposLocation}>
+                                    <Popup>
+                                        EPOS transaction<br></br>
+                                        Vendor: {popupVendor}<br></br>
+                                        Amount: £{popupAmount}<br></br>
+                                        Address: {popupAddress}<br></br>
+                                        {popupTimestamp}
+                                    </Popup>
+                                </Marker>
+                            )
+                        })}
                     </MapContainer>
                 </div>
             </div>
