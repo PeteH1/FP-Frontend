@@ -58,6 +58,19 @@
     bottom:0;
     right:0;
   }
+
+  #table1{
+    text-align: center;
+    margin: 0px auto;
+    float: none;
+  }
+
+  #table2{
+    text-align: center;
+    margin: 0px auto;
+    float: none;
+  }
+
   
   @keyframes App-logo-spin {
     from {
@@ -99,6 +112,9 @@
   width: 80%;
   margin: auto;
  }
+
+
+
 
 // Keep Bootstrap at the bottom of the file to prevent any bugs when overriding styling.
 @import "../bootswatch/_variables.scss";

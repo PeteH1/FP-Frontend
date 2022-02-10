@@ -7,79 +7,90 @@ const AssociateData = ({ data }) => {
     // } else {
     return (
         <div>
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <table class="table">
 
-            <div>
-                <Table striped bordered hover>
-                    <thead>
 
-                        <tr>
-                            <th colSpan={3}>Calls Made To Associates</th>
+                        <div>
+                            <Table striped bordered hover>
+                                <thead>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Associate Names</td>
-                            <td>Associate Number</td>
-                            <td>Timestamp</td>
-                        </tr>
-                        {data.callsMade.map((call) => {
-                            return (
-                                <tr>
-                                    <td>
-                                        {call.forenames} {call.surname}
-                                    </td>
-                                    <td>
-                                        {call.receiver_msisdn}
-                                    </td>
-                                    <td>
-                                        {call.timestamp}
-                                    </td>
-                                </tr>
-                            )
-                        }
-                        )}
-                    </tbody>
-                </Table>
-            </div>
+                                    <tr>
+                                        <th colSpan={3}>Calls Made To Associates</th>
 
-            <div>
-                <Table striped bordered hover>
-                    <thead>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-md-4">Associate Names</td>
+                                        <td class="col-md-4">Associate Number</td>
+                                        <td class="col-md-4">Timestamp</td>
+                                    </tr>
+                                    {data.callsMade.map((call) => {
+                                        return (
+                                            <tr>
+                                                <td class="col-md-4">
+                                                    {call.forenames} {call.surname}
+                                                </td >
+                                                <td class="col-md-4">
+                                                    {call.receiver_msisdn}
+                                                </td>
+                                                <td class="col-md-4">
+                                                    {call.timestamp}
+                                                </td>
+                                            </tr>
+                                        )
+                                    }
+                                    )}
+                                </tbody>
+                            </Table>
+                        </div>
 
-                        <tr>
-                            <th colSpan={3}>Calls Received from Associates</th>
+                        <div>
+                            <Table striped bordered hover>
+                                <thead>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Associate Names</td>
-                            <td>Associate Number</td>
-                            <td>Timestamp</td>
-                        </tr>
-                        {data.callsReceived.map((call) => {
-                            return (
-                                <tr>
-                                    <td>
-                                        {call.forenames} {call.surname}
-                                    </td>
-                                    <td>
-                                        {call.receiver_msisdn}
-                                    </td>
-                                    <td>
-                                        {call.timestamp}
-                                    </td>
-                                </tr>
-                            )
-                        }
-                        )}
-                    </tbody>
-                </Table>
-            </div>
-        </div>
+                                    <tr>
+                                        <th colSpan={3}>Calls Received from Associates</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-md-4">Associate Names</td>
+                                        <td class="col-md-4">Associate Number</td>
+                                        <td class="col-md-4">Timestamp</td>
+                                    </tr>
+                                    {data.callsReceived.map((call) => {
+                                        return (
+                                            <tr>
+                                                <td class="col-md-4">
+                                                    {call.forenames} {call.surname}
+                                                </td>
+                                                <td class="col-md-4">
+                                                    {call.receiver_msisdn}
+                                                </td>
+                                                <td class="col-md-4">
+                                                    {call.timestamp}
+                                                </td>
+                                            </tr>
+                                        )
+                                    }
+                                    )}
+                                </tbody>
+                            </Table>
+                        </div>
+
+
+
+                    </table>
+                </div>
+            </div >
+        </div >
+
     );
 }
-// }
+
 
 export default AssociateData;
