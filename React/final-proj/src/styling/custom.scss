@@ -73,24 +73,42 @@
 /* --------------------Nav Styling--------------------*/
 // $theme-colors:(
 //     "darkNav": #283149
-
-
 // );
+.nav {
+  // background-color: #61dafb;
+  background-color: #DC5753;
+}
+
+#inline { float:left; }
+.clearBoth { clear:both; }
+
+#redshiftLogo {
+  margin-left: 10px;
+  color: #DEDEDE;
+}
+
 /* --------------------Nav Styling End--------------------*/
+
+/* --------------------Button Styling Start--------------------*/
+// .bgRed {
+//   background-color: #DC5753;
+// }
+
+/* --------------------Button Styling End--------------------*/
+
 
 /* --------------------Tabspace Styling--------------------*/
 .nav-tabs {
-    // background-color: #61dafb;
-    border-color: none;
+  
 }
 
 .nav-tabs .nav-link:hover{
     color: gray;
 }
 
-.biodata{
-    background-color: #404B69;
-}
+// .biodata{
+//     background-color: #404B69;
+// }
 
 #map { height: 700px; }
   
@@ -104,6 +122,7 @@
 @import "../bootswatch/_variables.scss";
 @import "~bootstrap/scss/bootstrap";
 @import "../bootswatch/_bootswatch.scss";
+
 
 
 

@@ -17,13 +17,15 @@ $gray-600: #7f8a99 !default;
 $gray-700: #7b8ab8 !default;
 $gray-800: #444b40 !default;
 $gray-900: #212529 !default;
+$rs-gray: #EEEEEE !default;
 $black:    #000 !default;
 
 $blue:    #378dfc !default;
 $indigo:  #6610f2 !default;
 $purple:  #5b62f4 !default;
 $pink:    #d63384 !default;
-$red:     #e52527 !default;
+$red:     #DE0000 !default;
+$gifRed:  #DC5753 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
 $green:   #43cc29 !default;
@@ -45,7 +47,7 @@ $enable-shadows:              true !default;
 
 // Body
 
-$body-bg:                   $white !default;
+$body-bg:                   $gray-100 !default;
 $body-color:                $gray-800 !default;
 
 // Links

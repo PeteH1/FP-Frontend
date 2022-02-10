@@ -36,12 +36,12 @@ $btn-box-shadow-inset: inset 2px 3px 6px rgba($black, .2), inset -3px -2px 6px r
 
 .btn {
   position: relative;
-  color: $gray-700;
+  color: $rs-gray;
   border-radius: $btn-border-radius;
   @include shadow();
 
   &:focus {
-    color: $gray-700;
+    color: $rs-gray;
   }
 
   &:hover,
@@ -49,7 +49,7 @@ $btn-box-shadow-inset: inset 2px 3px 6px rgba($black, .2), inset -3px -2px 6px r
   &:active,
   &:active:focus {
     @include shadow();
-    color: $gray-700;
+    color: $rs-gray;
   }
 
   &:active,

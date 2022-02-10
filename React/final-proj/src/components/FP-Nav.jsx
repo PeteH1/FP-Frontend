@@ -45,19 +45,18 @@ const NavigationBar = ({ setSearch }) => {
 
     return (
         <div>
-            <Navbar bg="dark" variant="redNav">
+            <Navbar className="nav" /*bg="dark" variant="dark"*/>
                 <Container>
 
                     <Navbar.Brand href="/">
-
-                        <img
+                        <div id="inline">
+                            <img
                             src={Redshiftlogo}
                             alt="Logo"
                             width="30"
                             height="30"
                             className="d-inline-block align-top"
-                        />{' '}
-                        Suspect Search
+                        />{<div className="d-inline-block align-top" id="redshiftLogo">Redshift</div>}</div>
                     </Navbar.Brand>
                     {/* <Nav className="me-auto">
                         <Nav.Link href="/tabs">Temp Tabs</Nav.Link>
@@ -65,7 +64,7 @@ const NavigationBar = ({ setSearch }) => {
                     <Form variant="dark" className="d-flex">
                         <FormControl
                             type="search"
-                            placeholder="Full Name"
+                            placeholder="Name or Car Register"
                             className="me-2"
                             aria-label="Search"
                             onChange={(e) => {
