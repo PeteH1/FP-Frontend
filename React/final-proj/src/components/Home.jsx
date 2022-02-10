@@ -12,9 +12,8 @@ const Home = () => {
 
     return (
         <div>
-            <h1></h1>
-            {/* <img src={RedshiftLogo} alt="What a lovely logo" width="200px" height="200px" /> */}
-            {/* <SearchResults searchQuery={searchQuery}/> */}
+            <p>For Scenario 1, please type in First Name and Last Name into the Search Bar</p>
+            <p>For Scenario 3, please type in Car Registration Number into the Search Bar</p>
         </div>
     );
 }

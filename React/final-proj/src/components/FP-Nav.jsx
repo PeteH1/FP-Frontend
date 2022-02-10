@@ -45,7 +45,7 @@ const NavigationBar = ({ setSearch }) => {
 
     return (
         <div>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="redNav">
                 <Container>
 
                     <Navbar.Brand href="/">
