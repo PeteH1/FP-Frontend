@@ -75,7 +75,7 @@ const NavigationBar = ({ setSearch }) => {
                         />
                         <Link to="/SearchResults"> {/*This will need to link to the search results page*/}
                             <Button variant="dark" onClick={() => {
-                                if (tempSearch == "" || tempSearch.length <= 8 || !tempSearch.includes(" ")) {
+                                if (tempSearch == "" || tempSearch.length <= 7 || !tempSearch.includes(" ")) {
                                     alert("enter a first name and last name")
                                 } else {
                                     setSearch(tempSearch);
