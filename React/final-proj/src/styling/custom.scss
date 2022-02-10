@@ -92,6 +92,14 @@
     background-color: #404B69;
 }
 
+#map { height: 700px; }
+  
+.leaflet-container { 
+  height: 40rem;
+  width: 80%;
+  margin: auto;
+ }
+
 // Keep Bootstrap at the bottom of the file to prevent any bugs when overriding styling.
 @import "~bootstrap/scss/bootstrap";
 @import "../../node_modules/bootstrap/scss/bootstrap";

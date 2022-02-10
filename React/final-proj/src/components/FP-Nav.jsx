@@ -1,6 +1,6 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import Catlogo from '../img/sqcropLogo.jpg';
+import Redshiftlogo from '../img/RedshiftLogo.png';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
@@ -51,7 +51,7 @@ const NavigationBar = ({ setSearch }) => {
                     <Navbar.Brand href="/">
 
                         <img
-                            src={Catlogo}
+                            src={Redshiftlogo}
                             alt="Logo"
                             width="30"
                             height="30"
