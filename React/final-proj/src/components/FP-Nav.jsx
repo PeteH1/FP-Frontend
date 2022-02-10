@@ -45,19 +45,18 @@ const NavigationBar = ({ setSearch }) => {
 
     return (
         <div>
-            <Navbar bg="dark" variant="redNav">
+            <Navbar className="nav">
                 <Container>
 
                     <Navbar.Brand href="/">
-
-                        <img
-                            src={Redshiftlogo}
-                            alt="Logo"
-                            width="30"
-                            height="30"
-                            className="d-inline-block align-top"
-                        />{' '}
-                        Suspect Search
+                        <div id="inline">
+                            <img
+                                src={Redshiftlogo}
+                                alt="Logo"
+                                width="30"
+                                height="30"
+                                className="d-inline-block align-top"
+                            />{<div className="d-inline-block align-top" id="redshiftLogo">Redshift</div>}</div>
                     </Navbar.Brand>
                     {/* <Nav className="me-auto">
                         <Nav.Link href="/tabs">Temp Tabs</Nav.Link>
