@@ -6,6 +6,7 @@ import BiographicalInfo from './BiographicalInfo';
 import Finance from './FinancialTransactions';
 import Location from './Location';
 import axios from 'axios';
+import loadingGif from '../img/Preloader_10.gif';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import BioData from './dataComponents/BioData';
@@ -47,7 +48,11 @@ const Tabspace = ({ searchQuery }) => {
   if (error === true) {
     return <h2>Oops,theres been an error please refresh the page</h2>
   } else if (!loaded) {
-    return <h2>Please wait, data is loading</h2>
+    return <div>
+      <h2>Please wait, data is loading</h2>
+      <img src={loadingGif}
+        alt="Loading gif" />
+    </div>
   } else {
     return (
       <div id="tabz">
