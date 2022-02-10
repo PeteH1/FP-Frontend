@@ -101,8 +101,9 @@
  }
 
 // Keep Bootstrap at the bottom of the file to prevent any bugs when overriding styling.
+@import "../bootswatch/_variables.scss";
 @import "~bootstrap/scss/bootstrap";
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../bootswatch/_bootswatch.scss";
 
 
 
