@@ -7,231 +7,185 @@ const FinanceData = ({ data }) => {
     return (
         <div>
 
-            <div>
-                <Table striped bordered hover>
-                    <thead>
+            <div id="myTable">
+                <div class="row justify-content-center">
+                    <div class="col-8">
+                        <table class="table">
 
-                        <tr>
-                            <th colSpan={4}>ATM Transactions</th>
+                            <div>
+                                <Table striped bordered hover>
+                                    <thead>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Timestamp</td>
-                            <td>Type</td>
-                            <td>Amount</td>
-                            <td>Operator</td>
-                        </tr>
-                        {data.atmTransactions.map((details) => {
-                            return (
-                                <tr>
-                                    <td>
-                                        {details.timestamp}
-                                    </td>
-                                    <td>
-                                        {details.type}
-                                    </td>
-                                    <td>
-                                        {details.amount}
-                                    </td>
-                                    <td>
-                                        {details.operator}
-                                    </td>
-                                </tr>
-                            )
-                        }
-                        )}
-                    </tbody>
-                </Table>
-            </div>
+                                        <tr>
+                                            <th colSpan={4}>ATM Transactions</th>
 
-            <div>
-                <Table striped bordered hover>
-                    <thead>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-md-2">Timestamp</td>
+                                            <td class="col-md-2">Type</td>
+                                            <td class="col-md-2">Amount</td>
+                                            <td class="col-md-2">Operator</td>
+                                        </tr>
+                                        {data.atmTransactions.map((details) => {
+                                            return (
+                                                <tr>
+                                                    <td class="col-md-2">
+                                                        {details.timestamp}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.type}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.amount}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.operator}
+                                                    </td>
+                                                </tr>
+                                            )
+                                        }
+                                        )}
+                                    </tbody>
+                                </Table>
+                            </div>
 
-                        <tr>
-                            <th colSpan={5}>(ATM) Bank Card Used</th>
+                            <div>
+                                <Table striped bordered hover>
+                                    <thead>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Account Holder</td>
-                            <td>Account number</td>
-                            <td>Card number</td>
-                            <td>Sort Code</td>
-                            <td>Bank</td>
-                        </tr>
-                        {data.atmTransactions.map((details) => {
-                            return (
-                                <tr>
-                                    <td>
-                                    {details.forenames} {details.surname}
-                                    </td>
-                                    <td>
-                                    {details.account_number}
-                                    </td>
-                                    <td>
-                                    {details.bank_card_number}
-                                    </td>
-                                    <td>
-                                    {details.sort_code}
-                                    </td>
-                                    <td>
-                                    {details.bank}
-                                    </td>
-                                </tr>
-                            )
-                        }
-                        )}
-                    </tbody>
-                </Table>
-            </div>
+                                        <tr>
+                                            <th colSpan={5}>(ATM) Bank Card Used</th>
 
-            <div>
-                <Table striped bordered hover>
-                    <thead>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-md-2">Account Holder</td>
+                                            <td class="col-md-2">Account number</td>
+                                            <td class="col-md-2">Card number</td>
+                                            <td class="col-md-2">Sort Code</td>
+                                            <td class="col-md-2">Bank</td>
+                                        </tr>
+                                        {data.atmTransactions.map((details) => {
+                                            return (
+                                                <tr>
+                                                    <td class="col-md-2">
+                                                        {details.forenames} {details.surname}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.account_number}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.bank_card_number}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.sort_code}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.bank}
+                                                    </td>
+                                                </tr>
+                                            )
+                                        }
+                                        )}
+                                    </tbody>
+                                </Table>
+                            </div>
 
-                        <tr>
-                            <th colSpan={5}>EPOS Transactions</th>
+                            <div>
+                                <Table striped bordered hover>
+                                    <thead>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Timestamp</td>
-                            <td>Amount</td>
-                            <td>Payee Account</td>
-                            <td>Vendor</td>
-                            <td>Vendor Address</td>
-                        </tr>
-                        {data.eposTransactions.map((details) => {
-                            return (
-                                <tr>
-                                    <td>
-                                        {details.timestamp}
-                                    </td>
-                                    <td>
-                                    {details.amount}
-                                    </td>
-                                    <td>
-                                    {details.payee_account}
-                                    </td>
-                                    <td>
-                                    {details.vendor}
-                                    </td>
-                                    <td>
-                                    {details.street_name}
-                                    </td>
-                                </tr>
-                            )
-                        }
-                        )}
-                    </tbody>
-                </Table>
-            </div>
+                                        <tr>
+                                            <th colSpan={5}>EPOS Transactions</th>
 
-            <div>
-                <Table striped bordered hover>
-                    <thead>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-md-2">Timestamp</td>
+                                            <td class="col-md-2">Amount</td>
+                                            <td class="col-md-2">Payee Account</td>
+                                            <td class="col-md-2">Vendor</td>
+                                            <td class="col-md-2">Vendor Address</td>
+                                        </tr>
+                                        {data.eposTransactions.map((details) => {
+                                            return (
+                                                <tr>
+                                                    <td class="col-md-2">
+                                                        {details.timestamp}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.amount}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.payee_account}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.vendor}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.street_name}
+                                                    </td>
+                                                </tr>
+                                            )
+                                        }
+                                        )}
+                                    </tbody>
+                                </Table>
+                            </div>
 
-                        <tr>
-                            <th colSpan={5}>(EPOS) Bank Card Used</th>
+                            <div>
+                                <Table striped bordered hover>
+                                    <thead>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Account Holder</td>
-                            <td>Account number</td>
-                            <td>Card number</td>
-                            <td>Sort Code</td>
-                            <td>Bank</td>
-                        </tr>
-                        {data.eposTransactions.map((details) => {
-                            return (
-                                <tr>
-                                    <td>
-                                    {details.forenames} {details.surname}
-                                    </td>
-                                    <td>
-                                    {details.account_number}
-                                    </td>
-                                    <td>
-                                    {details.bank_card_number}
-                                    </td>
-                                    <td>
-                                    {details.sort_code}
-                                    </td>
-                                    <td>
-                                    {details.bank}
-                                    </td>
-                                </tr>
-                            )
-                        }
-                        )}
-                    </tbody>
-                </Table>
-            </div>
+                                        <tr>
+                                            <th colSpan={5}>(EPOS) Bank Card Used</th>
 
-
-            {/* <h4>ATM Transactions</h4>
-            {data.atmTransactions.map((details) => {
-                return (
-                    <div>
-                        <p>Timestamp: {details.timestamp}</p>
-                        <p>Type: {details.type}</p>
-                        <p>Amount: {details.amount}</p>
-                        <p>Operator: {details.operator}</p>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-md-2">Account Holder</td>
+                                            <td class="col-md-2">Account number</td>
+                                            <td class="col-md-2">Card number</td>
+                                            <td class="col-md-2">Sort Code</td>
+                                            <td class="col-md-2">Bank</td>
+                                        </tr>
+                                        {data.eposTransactions.map((details) => {
+                                            return (
+                                                <tr>
+                                                    <td class="col-md-2">
+                                                        {details.forenames} {details.surname}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.account_number}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.bank_card_number}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.sort_code}
+                                                    </td>
+                                                    <td class="col-md-2">
+                                                        {details.bank}
+                                                    </td>
+                                                </tr>
+                                            )
+                                        }
+                                        )}
+                                    </tbody>
+                                </Table>
+                            </div>
+                        </table>
                     </div>
-                )
-            }
-            )} */}
-
-            {/* <h4>Bank card used</h4>
-            {data.atmTransactions.map((details) => {
-                return (
-                    <div>
-                        <p>Account Holder: {details.forenames} {details.surname}</p>
-                        <p>Account number: {details.account_number}</p>
-                        <p>Card number: {details.bank_card_number}</p>
-                        <p>Sort Code: {details.sort_code}</p>
-                        <p>Bank: {details.bank}</p>
-                    </div>
-                )
-            }
-            )} */}
-
-            {/* <h4>EPOS Transactions</h4>
-            {data.eposTransactions.map((details) => {
-                return (
-                    <div>
-                        <p>Timestamp: {details.timestamp}</p>
-                        <p>Amount: {details.amount}</p>
-                        <p>Payee Account: {details.payee_account}</p>
-                        <p>Vendor: {details.vendor}</p>
-                        <p>Vendor Address: {details.street_name}</p>
-                    </div>
-                )
-            }
-            )}
-            <h4>Bank card used</h4>
-            {data.eposTransactions.map((details) => {
-                return (
-                    <div>
-                        <p>Account Holder: {details.forenames} {details.surname}</p>
-                        <p>Account number: {details.account_number}</p>
-                        <p>Card number: {details.bank_card_number}</p>
-                        <p>Sort Code: {details.sort_code}</p>
-                        <p>Bank: {details.bank}</p>
-                    </div>
-                )
-            }
-            )} */}
+                </div>
+            </div>
         </div>
     );
 }
-// }
+            // }
 
-export default FinanceData;
+            export default FinanceData;

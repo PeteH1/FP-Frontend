@@ -11,100 +11,90 @@ const BioData = ({ data }) => {
     return (
         <div>
             {/* className={styles.biodata} */}
-            <div> 
+            {/* <div>
                 <header>
+                </header> */}
+                <div id="myTable">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+                            <table class="table">
 
-                </header>
+                                <div id="table1">
+                                    <Table striped bordered hover>
+                                        <thead>
+                                            <tr>
+                                                <th colSpan={2}>Basic Information </th>
 
-                <div>
-                    <Table striped bordered hover>
-                        <thead>
-                            <tr>
-                                <th colSpan={2}>Basic Information </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody >
+                                            <tr>
+                                                <td class="col-md-4">Citizen ID</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].citizen_id}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-4">Date of Birth</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].date_of_birth}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-4">Home Address</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].home_address}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-4">Place of Birth</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].place_of_birth}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-4">Sex</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].sex}</td>
+                                            </tr>
+                                        </tbody>
+                                    </Table>
+                                </div>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Citizen ID</td>
-                                <td>{data.citizenPassport[0].citizen_id}</td>
-                            </tr>
-                            <tr>
-                                <td>Date of Birth</td>
-                                <td>{data.citizenPassport[0].date_of_birth}</td>
-                            </tr>
-                            <tr>
-                                <td>Home Address</td>
-                                <td>{data.citizenPassport[0].home_address}</td>
-                            </tr>
-                            <tr>
-                                <td>Place of Birth</td>
-                                <td>{data.citizenPassport[0].place_of_birth}</td>
-                            </tr>
-                            <tr>
-                                <td>Sex</td>
-                                <td>{data.citizenPassport[0].sex}</td>
-                            </tr>
-                        </tbody>
-                    </Table>
+                                
+
+                                <div id="table2">
+                                    <Table striped bordered hover>
+                                        <thead>
+                                            <tr class="text center">
+                                                <th colSpan={2}>Passport Info </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col-md-4">Passport Number</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].passport_number}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-4">Nationality</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].nationality}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-4">Date of Issue</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].date_of_issue}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-4">Date of Expiry</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].date_of_expiry}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-4">Issuing Country</td>
+                                                <td class="col-md-4">{data.citizenPassport[0].issuing_country}</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </Table>
+                                </div>
+
+                            </table>
+                        </div>
+                    </div>
                 </div>
-
-                <div>
-                    <Table striped bordered hover>
-                        <thead>
-                            <tr>
-                                <th colSpan={2}>Passport Info </th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Passport Number</td>
-                                <td>{data.citizenPassport[0].passport_number}</td>
-                            </tr>
-                            <tr>
-                                <td>Nationality</td>
-                                <td>{data.citizenPassport[0].nationality}</td>
-                            </tr>
-                            <tr>
-                                <td>Date of Issue</td>
-                                <td>{data.citizenPassport[0].date_of_issue}</td>
-                            </tr>
-                            <tr>
-                                <td>Date of Expiry</td>
-                                <td>{data.citizenPassport[0].date_of_expiry}</td>
-                            </tr>
-                            <tr>
-                                <td>Issuing Country</td>
-                                <td>{data.citizenPassport[0].issuing_country}</td>
-                            </tr>
-
-                        </tbody>
-                    </Table>
-                </div>
-            </div>
+            {/* </div> */}
 
 
-
-
-
-
-
-
-
-            {/* <h4>Basic Information</h4>
-            <p>ID: {data.citizenPassport[0].citizen_id}</p>
-            <p>Date of Birth: {data.citizenPassport[0].date_of_birth}</p>
-            <p>Home Address: {data.citizenPassport[0].home_address}</p>
-            <p>Place of Birth: {data.citizenPassport[0].place_of_birth}</p>
-            <p>Sex: {data.citizenPassport[0].date_of_birth}</p>
-            <p>Phone Number: {data.callsMade[0].caller_msisdn}</p>
-            <h4>Passport Information</h4>
-            <p>Passport Number: {data.citizenPassport[0].passport_number}</p>
-            <p>Date of Expiry: {data.citizenPassport[0].date_of_expiry}</p>
-            <p>Date of Issue: {data.citizenPassport[0].date_of_issue}</p>
-            <p>Issuing Country: {data.citizenPassport[0].issuing_country}</p>
-            <p>Nationality: {data.citizenPassport[0].nationality}</p> */}
         </div>
     );
 }
