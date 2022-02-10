@@ -23,7 +23,7 @@ const LocationData = ({ data }) => {
             <div>
                 <h2>Location Data</h2>
                 <div id="map">
-                    <MapContainer center={[data.atmTransactions[0].latitude, data.atmTransactions[0].longitude]} zoom={13}>
+                    <MapContainer center={[data.anprSightings[0].latitude, data.anprSightings[0].longitude]} zoom={13}>
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
