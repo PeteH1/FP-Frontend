@@ -86,9 +86,20 @@
 /* --------------------Nav Styling--------------------*/
 // $theme-colors:(
 //     "darkNav": #283149
-
-
 // );
+.nav {
+  // background-color: #61dafb;
+  background-color: #DC5753;
+}
+
+#inline { float:left; }
+.clearBoth { clear:both; }
+
+#redshiftLogo {
+  margin-left: 10px;
+  color: #DEDEDE;
+}
+
 /* --------------------Nav Styling End--------------------*/
 
 /* --------------------Tabspace Styling--------------------*/
