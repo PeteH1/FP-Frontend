@@ -18,27 +18,48 @@ const SearchResults = ({ searchQuery }) => {
     useEffect(() => {
 
         if (searchQuery) {
-            
-            axios.get(`http://localhost:5015/suspect/search/${searchQuery}`)
-                .then((res) => {
-                    // const bioInfo = res.data.bioinfo;
-                    console.log(res.data[0].citizen_id);
 
-                    setData(res.data);
-                    console.log("my data", data);
-                    setLoaded(true);
+            if (/\d/.test(searchQuery)) {
+
+                axios.get(`http://localhost:5015/suspect/regsearch/${searchQuery}`)
+                    .then((res) => {
+                        // const bioInfo = res.data.bioinfo;
+                        setData(res.data);
+                        setLoaded(true);
+                    })
+                    .catch((err) => {
+                        setError(error);
+                        console.error(err);
+                    })
+                    .then(() => {
+                        setTimeout(() => {
+                            console.log(data)
+                        }, 2000)
+                    });
+
+            } else {
+
+                axios.get(`http://localhost:5015/suspect/search/${searchQuery}`)
+                    .then((res) => {
+                        // const bioInfo = res.data.bioinfo;
+                        console.log(res.data[0].citizen_id);
+
+                        setData(res.data);
+                        console.log("my data", data);
+                        setLoaded(true);
 
 
-                })
-                .catch((err) => {
-                    setError(error);
-                    console.error(err);
-                })
-                .then(() => {
-                    setTimeout(() => {
-                        console.log(data)
-                    }, 2000)
-                });
+                    })
+                    .catch((err) => {
+                        setError(error);
+                        console.error(err);
+                    })
+                    .then(() => {
+                        setTimeout(() => {
+                            console.log(data)
+                        }, 2000)
+                    });
+            }
         }
     }, [searchQuery]
     );
@@ -72,7 +93,7 @@ const SearchResults = ({ searchQuery }) => {
                                 </SearchResultsCards>
                             </Card.Text>
                             <Link to={`/tabs/${data.citizen_id}`}>
-                            <Button variant="primary">More Info</Button>
+                                <Button variant="primary">More Info</Button>
                             </Link>
                         </Card.Body>
                     </Card>

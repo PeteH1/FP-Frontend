@@ -72,8 +72,7 @@
  
 /* --------------------Nav Styling--------------------*/
 // $theme-colors:(
-//     "redNav": #FF4949,
-//     "red": #DE0000
+//     "darkNav": #283149
 
 
 // );
@@ -102,11 +101,8 @@
  }
 
 // Keep Bootstrap at the bottom of the file to prevent any bugs when overriding styling.
-// @import "~bootstrap/scss/bootstrap";
-
-@import "../bootswatch/_variables.scss";
+@import "~bootstrap/scss/bootstrap";
 @import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../bootswatch/_bootswatch.scss";
 
 
 
