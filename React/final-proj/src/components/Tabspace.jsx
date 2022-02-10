@@ -59,6 +59,7 @@ const Tabspace = ({ searchQuery }) => {
         <h1>{data.citizenPassport[0].forenames} {data.citizenPassport[0].surname}</h1>
 
         <Tabs id="controlled-tab-example" className="mb-3"
+          defaultActiveKey="bio-info"
           activeKey={key}
           onSelect={(k) => {
             setKey(k);
