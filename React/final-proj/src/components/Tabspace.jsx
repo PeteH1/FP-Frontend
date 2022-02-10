@@ -58,7 +58,7 @@ const Tabspace = ({ searchQuery }) => {
       <div id="tabz">
         <h1>{data.citizenPassport[0].forenames} {data.citizenPassport[0].surname}</h1>
 
-        <Tabs id="controlled-tab-example" className="mb-3"
+        <Tabs id="controlled-tab-example" id="tabspace" className="mb-3"
           activeKey={key}
           onSelect={(k) => {
             setKey(k);
