@@ -64,7 +64,7 @@ const NavigationBar = ({ setSearch }) => {
                     <Form variant="dark" className="d-flex">
                         <FormControl
                             type="search"
-                            placeholder="Full Name"
+                            placeholder="Full Name or Car Reg..."
                             className="me-2"
                             aria-label="Search"
                             onChange={(e) => {
@@ -73,7 +73,7 @@ const NavigationBar = ({ setSearch }) => {
                             }}
                         />
                         <Link to="/SearchResults"> {/*This will need to link to the search results page*/}
-                            <Button variant="dark" onClick={() => {
+                            <Button id="searchBtn" variant="dark" onClick={() => {
                                 if (tempSearch == "" || tempSearch.length <= 7 || !tempSearch.includes(" ")) {
                                     alert("enter a first name and last name")
                                 } else {

@@ -82,7 +82,7 @@ const SearchResults = ({ searchQuery }) => {
             {data.map((data) => {
                 return (
                     <Card style={{ width: '45rem' }} className="text-center" class="shadow border" id="selectCard">
-                        <Card.Header as="h1">{data.forenames} {data.surname}</Card.Header>
+                        <Card.Header id="suspectName" as="h1">{data.forenames} {data.surname}</Card.Header>
                         <Card.Body>
                             {/* <Card.Title>Special title treatment</Card.Title> */}
                             <Card.Text>
@@ -93,7 +93,7 @@ const SearchResults = ({ searchQuery }) => {
                                 </SearchResultsCards>
                             </Card.Text>
                             <Link to={`/tabs/${data.citizen_id}`}>
-                                <Button variant="primary">More Info</Button>
+                                <Button id="moreInfoBtn" variant="primary">More Info</Button>
                             </Link>
                         </Card.Body>
                     </Card>

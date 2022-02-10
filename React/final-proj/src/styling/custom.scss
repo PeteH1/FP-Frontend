@@ -1,3 +1,10 @@
+/* --------------------Fonts Start--------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
+/* --------------------Fonts End--------------------*/
+
+
 /* --------------------Default + Harry App Styling--------------------*/
 .App {
     text-align: center;
@@ -47,8 +54,12 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    // color: #DEDEDE;
+    background-color: #DC5753;
   }
   
+  ul.nav.nav-tabs 
+
   .footerbar {
     height: 75px;
     background-color: gray;
@@ -71,7 +82,6 @@
     float: none;
   }
 
-  
   @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);
@@ -98,6 +108,19 @@
 #redshiftLogo {
   margin-left: 10px;
   color: #DEDEDE;
+  font-family: 'Bungee', cursive;
+}
+
+#searchBtn {
+  background-color: #d87e7b;
+  color: #EEEEEE;
+  box-shadow: none;
+}
+
+#moreInfoBtn {
+  background-color: #d87e7b;
+  color: #EEEEEE;
+  box-shadow: none;
 }
 
 /* --------------------Nav Styling End--------------------*/
@@ -106,10 +129,16 @@
 .nav-tabs {
     // background-color: #61dafb;
     border-color: none;
+    
+}
+
+.nav-tabs .nav-link{
+  color: #EEEEEE;
 }
 
 .nav-tabs .nav-link:hover{
-    color: gray;
+    color: white;
+    background-color: #d87e7b;
 }
 
 .biodata{
@@ -124,7 +153,9 @@
   margin: auto;
  }
 
-
+h1{
+  font-family: 'Catamaran', sans-serif;
+}
 
 
 // Keep Bootstrap at the bottom of the file to prevent any bugs when overriding styling.
