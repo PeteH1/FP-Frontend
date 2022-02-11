@@ -78,6 +78,9 @@ const Tabspace = ({ searchQuery }) => {
           </Tab>
         </Tabs>
 
+            <p>
+              Please click on the tabs for more information
+            </p>
 
 
       </div>
