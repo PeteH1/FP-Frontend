@@ -1,0 +1,170 @@
+/* --------------------Fonts Start--------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
+/* --------------------Fonts End--------------------*/
+
+
+/* --------------------Default + Harry App Styling--------------------*/
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  h2 {
+    color: black
+  }
+  
+  #parentCard{ 
+    color: black
+  }
+  
+  #selectCard{
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+  }
+  
+  ul.nav.nav-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    // color: #DEDEDE;
+    background-color: #DC5753;
+  }
+  
+  ul.nav.nav-tabs 
+
+  .footerbar {
+    height: 75px;
+    background-color: gray;
+    position:absolute;
+    position: fixed;
+    left:0;
+    bottom:0;
+    right:0;
+  }
+
+  #table1{
+    text-align: center;
+    margin: 0px auto;
+    float: none;
+  }
+
+  #table2{
+    text-align: center;
+    margin: 0px auto;
+    float: none;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+/* --------------------Default + Harry App Styling--------------------*/
+
+ 
+/* --------------------Nav Styling--------------------*/
+// $theme-colors:(
+//     "darkNav": #283149
+// );
+.nav {
+  // background-color: #61dafb;
+  background-color: #DC5753;
+}
+
+#inline { float:left; }
+.clearBoth { clear:both; }
+
+#redshiftLogo {
+  margin-left: 10px;
+  color: #DEDEDE;
+  font-family: 'Bungee', cursive;
+}
+
+#searchBtn {
+  background-color: #d87e7b;
+  color: #EEEEEE;
+  box-shadow: none;
+}
+
+#moreInfoBtn {
+  background-color: #d87e7b;
+  color: #EEEEEE;
+  box-shadow: none;
+}
+
+/* --------------------Nav Styling End--------------------*/
+
+/* --------------------Tabspace Styling--------------------*/
+.nav-tabs {
+    // background-color: #61dafb;
+    border-color: none;
+    
+}
+
+.nav-tabs .nav-link{
+  color: #EEEEEE;
+}
+
+.nav-tabs .nav-link:hover{
+    color: white;
+    background-color: #d87e7b;
+}
+
+.biodata{
+    background-color: #404B69;
+}
+
+#map { height: 700px; }
+  
+.leaflet-container { 
+  height: 40rem;
+  width: 80%;
+  margin: auto;
+ }
+
+h1{
+  font-family: 'Catamaran', sans-serif;
+}
+
+
+// Keep Bootstrap at the bottom of the file to prevent any bugs when overriding styling.
+@import "../bootswatch/_variables.scss";
+@import "~bootstrap/scss/bootstrap";
+@import "../bootswatch/_bootswatch.scss";
+
+
+
+
+
+
