@@ -69,7 +69,7 @@ const AssociateData = ({ data }) => {
                                                     {call.forenames} {call.surname}
                                                 </td>
                                                 <td class="col-md-4">
-                                                    {call.receiver_msisdn}
+                                                    {call.caller_msisdn}
                                                 </td>
                                                 <td class="col-md-4">
                                                     {call.timestamp}
